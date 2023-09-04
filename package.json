@@ -1,0 +1,14 @@
+{
+  "name": "musicly_task",
+  "version": "1.0.0",
+  "description": "Music for Demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Parakh@Pixel6",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.66.1"
+  }
+}
