@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
     <title>Musicly</title>
@@ -13,18 +14,91 @@
     <main>
         <header>
             <div class="header-wrapper d-flex justify-space-between align-center">
-                <div class="d-flex align-center justify-center g-64">
-                    <h1>musicly</h1>
+                <div class="header-left d-flex align-center justify-center">
+                    <a href="#">
+                        <h1>musicly</h1>
+                    </a>
+                    <div class="menu d-flex justify-center align-center g-24">
+                        <a href="#" class="d-flex justify-center align-center g-8">
+                            <span class="material-symbols-outlined">
+                                home
+                            </span>
+                            <p class="mt-4">home</p>
+                        </a>
+                        <a href="#" class="d-flex justify-center align-center g-8">
+                            <span class="material-symbols-outlined">
+                                headphones
+                            </span>
+                            <p class="mt-4">library</p>
+                        </a>
+                        <a href="#" class="d-flex justify-center align-center g-8">
+                            <span class="material-symbols-outlined">
+                                podcasts
+                            </span>
+                            <p class="mt-4">podcasts</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="header-right d-flex align-center justify-center g-32">
+                    <div class="search-wrapper d-flex align-center justify-center">
+                        <form action="/" method="get" name="search" class="w-100 h-100 d-flex align-center justify-center">
+                            <div class="search d-flex justify-space-between align-center w-100">
+                                <input id="searchInput" class="h-100" type="text" placeholder="Search Song, Singer or Album ">
+                                <button type="submit" class="h-100 d-flex align-center justify-center">
+                                    <span class="material-symbols-outlined">
+                                        search
+                                    </span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="notify ">
+                        <div class="notify-count d-flex align-center justify-center">
+                            <p>1</p>
+                        </div>
+                        <span class="material-symbols-outlined">
+                            notifications
+                        </span>
+                    </div>
+                    <div class="profile d-flex align-center justify-center g-4">
+                        <div class="profile-img">
+                            <img src="./assets/profile.png" alt="user-img">
+                        </div>
+                        <span class="material-symbols-outlined">
+                            expand_more
+                        </span>
+                    </div>
                 </div>
 
             </div>
         </header>
-        <section>
-
+        <section class="section-container hero-section">
+            <div class="hero-slider w-100 h-100 d-flex justify-space-between align-center">
+                <span id="back" class="material-symbols-outlined back">
+                    arrow_back_ios
+                </span>
+                <div id="hero-img-wrapper" class="hero-img-wrapper d-flex justify-flex-start align-center g-32">
+                    <div id="hero-img-container" class="hero-img-container d-flex justify-center align-center g-32">
+                        <!--Hero Images Fetcher-->
+                    </div>
+                </div>
+                <span id="forward" class="material-symbols-outlined forward">
+                    arrow_forward_ios
+                </span>
+            </div>
         </section>
         <section>
 
         </section>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+        integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
