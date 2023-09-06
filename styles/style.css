@@ -8,7 +8,7 @@
 
 html,
 body {
-  height: 100%;
+  min-height: 100vh;
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
@@ -22,6 +22,10 @@ body::-webkit-scrollbar {
 
 .d-flex {
   display: flex;
+}
+
+.opac-0 {
+  opacity: 0;
 }
 
 .flex-wrap {
@@ -96,6 +100,10 @@ body::-webkit-scrollbar {
   gap: 8px;
 }
 
+.g-12 {
+  gap: 12px;
+}
+
 .g-16 {
   gap: 16px;
 }
@@ -106,6 +114,10 @@ body::-webkit-scrollbar {
 
 .g-32 {
   gap: 32px;
+}
+
+.g-40 {
+  gap: 40px;
 }
 
 .g-40 {
@@ -136,7 +148,7 @@ body::-webkit-scrollbar {
 main {
   background-color: black;
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
 }
 main header {
   position: fixed;
@@ -145,6 +157,7 @@ main header {
   padding: 14px 32px;
   background-color: black;
   width: 100vw;
+  z-index: 9;
   border-bottom: 2px solid rgba(116, 116, 116, 0.5019607843);
 }
 main header .header-wrapper .header-left a {
@@ -174,6 +187,9 @@ main header .header-wrapper .header-left .menu a {
   color: #FFF;
 }
 main header .header-wrapper .header-left .menu a:first-child {
+  color: #C01A20;
+}
+main header .header-wrapper .header-left .menu a:hover {
   color: #C01A20;
 }
 main header .header-wrapper .header-left .menu a p {
@@ -228,12 +244,15 @@ main header .header-wrapper .header-right .notify-count p {
   line-height: 20px; /* 166.667% */
   letter-spacing: 0.14px;
 }
-main header .header-wrapper .header-right .profile {
+main header .header-wrapper .header-right .profile-container {
+  position: relative;
+}
+main header .header-wrapper .header-right .profile-container .profile {
   height: 40px;
   color: #fff;
   cursor: pointer;
 }
-main header .header-wrapper .header-right .profile-img {
+main header .header-wrapper .header-right .profile-container .profile-img {
   height: 40px;
   width: 40px;
   border-radius: 50%;
@@ -241,17 +260,35 @@ main header .header-wrapper .header-right .profile-img {
   object-position: center;
   overflow: hidden;
 }
+main header .header-wrapper .header-right .profile-container .profile-action {
+  position: absolute;
+  padding: 20px 16px;
+  border-radius: 8px;
+  background-color: #fff;
+  top: 50px;
+  left: -82px;
+  z-index: 99;
+}
+main header .header-wrapper .header-right .profile-container .profile-action a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
 main .hero-section {
-  height: 62vh;
+  height: 52vh;
   width: 100vw;
   background-color: transparent;
   margin-top: 78px;
-  padding: 40px 36px;
+  padding: 32px 32px 0px 32px;
   overflow-y: hidden;
   overflow-x: hidden;
 }
 main .hero-section .hero-slider {
   color: #fff;
+  height: 94%;
 }
 main .hero-section .hero-slider .back, main .hero-section .hero-slider .forward {
   font-size: 32px;
@@ -288,10 +325,19 @@ main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img 
   width: 410px;
   border-radius: 10px;
 }
-main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img:first-child {
+main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img:nth-child(2) {
+  cursor: pointer;
+}
+main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img.transformed-0 {
   transform: perspective(478px) rotateY(345deg) scale(0.9);
 }
-main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img:last-child {
+main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img.transformed-1 {
+  transform: translate(0%, 0%);
+}
+main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img.transformed-11 {
+  transform: translate(200%, 0%) perspective(478px) rotateY(-345deg) scale(0.9);
+}
+main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img.transformed-2 {
   transform: perspective(478px) rotateY(-345deg) scale(0.9);
 }
 @media (max-width: 1440px) {
@@ -313,6 +359,7 @@ main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img:
   }
 }
 main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img-up {
+  position: relative;
   border-radius: 8px;
   height: 380px;
   width: 100%;
@@ -325,11 +372,52 @@ main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img-
   height: 100%;
   width: 100%;
 }
+main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img:nth-child(2):hover .hero-img-hover {
+  transition: 0.3s ease-in-out;
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.116);
+  box-shadow: 0px -40px 73px 16px black inset;
+}
+main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img:nth-child(2):hover .hero-img-hover .play-container {
+  transition: 0.3s ease-in-out;
+  height: 80%;
+  width: 100%;
+}
+main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img:nth-child(2):hover .hero-img-hover .play-container span {
+  transition: 0.3s ease-in-out;
+  padding: 8px;
+  background-color: rgba(128, 128, 128, 0.363);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 36px;
+  margin-top: 60px;
+}
+main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img:nth-child(2):hover .hero-img-hover .song-info {
+  transition: 0.3s ease-in-out;
+  text-align: left;
+  padding: 12px;
+  width: 100%;
+}
+main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img:nth-child(2):hover .hero-img-hover .song-info h4 {
+  transition: 0.3s ease-in-out;
+  font-size: 24px;
+  font-weight: 300;
+}
+main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img:nth-child(2):hover .hero-img-hover .song-info h5 {
+  transition: 0.3s ease-in-out;
+  font-size: 18px;
+  color: #b6b4b4;
+  font-weight: 400;
+}
 main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img-down {
   position: relative;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  height: 48px;
+  height: 42px;
   width: 100%;
   overflow: hidden;
   object-fit: cover;
@@ -341,11 +429,117 @@ main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img-
 main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img-down .shadow {
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scaleY(-1);
   position: absolute;
   height: 100%;
   width: 100%;
-  box-shadow: -5px -12px 32px 12px black inset;
+  box-shadow: -6px 12px 29px 4px black inset;
+}
+main .all-section {
+  height: 32vh;
+  width: 100vw;
+  padding: 0px 32px;
+}
+main .all-section nav h3 {
+  color: #FFF;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+}
+main .all-section nav .navigations .navigation span {
+  color: #888;
+  cursor: pointer;
+}
+main .all-section nav .navigations .navigation span.active {
+  color: #fff;
+}
+main .all-section nav .navigations button {
+  background-color: #fff;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+main .all-section nav .navigations button p {
+  color: #C01A20;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+}
+main .all-section .slider-container {
+  overflow-x: hidden;
+  height: auto;
+  padding-top: 12px;
+}
+main .all-section .slider-container::-webkit-scrollbar {
+  display: none;
+}
+main .all-section .slider-container .slider-albums-wrapper {
+  transition: transform 0.3s ease;
+  height: auto;
+  width: 100%;
+}
+main .all-section .slider-container .slider-albums-wrapper .slider-album {
+  padding: 8px 0px;
+  height: auto;
+  width: auto;
+}
+main .all-section .slider-container .slider-albums-wrapper .slider-album .album-img {
+  position: relative;
+  height: 170px;
+  width: 170px;
+  border-radius: 8px;
+  overflow: hidden;
+  object-fit: contain;
+  object-position: center;
+}
+main .all-section .slider-container .slider-albums-wrapper .slider-album .album-img img {
+  height: 100%;
+  width: 100%;
+}
+main .all-section .slider-container .slider-albums-wrapper .slider-album .album-img:hover .album-img-hover {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+main .all-section .slider-container .slider-albums-wrapper .slider-album .album-img:hover .album-img-hover span {
+  padding: 8px;
+  border-radius: 50%;
+  background-color: rgba(85, 85, 85, 0.5882352941);
+  color: #fff;
+  font-size: 32px;
+}
+main .all-section .slider-container .slider-albums-wrapper .slider-album .album-des h4 {
+  display: -webkit-box;
+  width: 170px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  color: #FFF;
+  text-overflow: ellipsis;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+}
+main .all-section .slider-container .slider-albums-wrapper .slider-album .album-des h5 {
+  display: -webkit-box;
+  width: 170px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  color: #888;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
 }
 
 /*# sourceMappingURL=style.css.map */
