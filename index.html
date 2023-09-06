@@ -6,7 +6,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./styles/style.css">
     <title>Musicly</title>
 </head>
@@ -60,26 +62,41 @@
                             notifications
                         </span>
                     </div>
-                    <div class="profile d-flex align-center justify-center g-4">
-                        <div class="profile-img">
-                            <img src="./assets/profile.png" alt="user-img">
+                    <div class="profile-container">
+                        <div class="profile d-flex align-center justify-center g-4">
+                            <div class="profile-img">
+                                <img src="./assets/profile.png" alt="user-img">
+                            </div>
+                            <span class="material-symbols-outlined">
+                                expand_more
+                            </span>
                         </div>
-                        <span class="material-symbols-outlined">
-                            expand_more
-                        </span>
+                        <div class="profile-action opac-0 d-flex flex-d-col justify-center align-flex-start g-24">
+                            <a class="d-flex g-8 justify-center align-center" href="#">
+                                <span class="material-symbols-rounded">account_circle</span>
+                                <p>My Account</p>
+                            </a>
+                            <a class="d-flex g-8 justify-center align-center" href="#">
+                                <span class="material-symbols-rounded">star</span>
+                                <p>Premium</p>
+                            </a>
+                            <a class="d-flex g-8 justify-center align-center" href="#">
+                                <span class="material-symbols-rounded">logout</span>
+                                <p>Logout</p>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </header>
         <section class="section-container hero-section">
-            <div class="hero-slider w-100 h-100 d-flex justify-space-between align-center">
+            <div class="hero-slider w-100  d-flex justify-space-between align-center">
                 <span id="back" class="material-symbols-outlined back">
                     arrow_back_ios
                 </span>
                 <div id="hero-img-wrapper" class="hero-img-wrapper d-flex justify-flex-start align-center g-32">
                     <div id="hero-img-container" class="hero-img-container d-flex justify-center align-center g-32">
-                        <!--Hero Images Fetcher-->
                     </div>
                 </div>
                 <span id="forward" class="material-symbols-outlined forward">
@@ -87,8 +104,27 @@
                 </span>
             </div>
         </section>
-        <section>
-
+        <section class="section-container all-section">
+            <nav class="d-flex justify-space-between">
+                <h3>Trending Songs</h3>
+                <div class="navigations d-flex justify-center align-center g-24">
+                    <div class="navigation d-flex justify-center align-center g-24">
+                        <span class="material-symbols-outlined back">
+                            arrow_back_ios
+                        </span>
+                        <span class="active material-symbols-outlined forward">
+                            arrow_forward_ios
+                        </span>
+                    </div>
+                    <button type="button">
+                        <p>See All</p>
+                    </button>
+                </div>
+            </nav>
+            <div class="slider-container">
+                <div class="slider-albums-wrapper d-flex align-center g-40">
+                </div>
+            </div>
         </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
@@ -99,6 +135,11 @@
         integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
     </script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>
+
+<div class='album-img-hover d-flex justify-center align-center'>
+    <span class="material-symbols-outlined">play_arrow</span>
+</div>
