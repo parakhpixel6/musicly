@@ -8,10 +8,10 @@
 
 html,
 body {
-  min-height: 100vh;
+  position: relative;
+  height: 100vh;
   width: 100%;
   box-sizing: border-box;
-  overflow: hidden;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -145,12 +145,11 @@ body::-webkit-scrollbar {
   height: 100%;
 }
 
-main {
-  background-color: black;
-  width: 100vw;
-  height: 100vh;
+.d-none {
+  display: none;
 }
-main header {
+
+header {
   position: fixed;
   top: 0;
   margin: 0 auto;
@@ -160,73 +159,73 @@ main header {
   z-index: 9;
   border-bottom: 2px solid rgba(116, 116, 116, 0.5019607843);
 }
-main header .header-wrapper .header-left a {
+header .header-wrapper .header-left a {
   text-decoration: none;
   color: #C01A20;
 }
-main header .header-wrapper .header-left a h1 {
+header .header-wrapper .header-left a h1 {
   font-family: Righteous;
   font-size: 28px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
 }
-main header .header-wrapper .header-left .menu {
+header .header-wrapper .header-left .menu {
   padding: 0px 64px;
 }
 @media (max-width: 1100px) {
-  main header .header-wrapper .header-left .menu {
+  header .header-wrapper .header-left .menu {
     padding: 0px 0px 0px 32px;
     gap: 4px !important;
   }
 }
-main header .header-wrapper .header-left .menu a {
+header .header-wrapper .header-left .menu a {
   padding: 8px;
   text-decoration: none;
   text-transform: capitalize;
   color: #FFF;
 }
-main header .header-wrapper .header-left .menu a:first-child {
+header .header-wrapper .header-left .menu a:first-child {
   color: #C01A20;
 }
-main header .header-wrapper .header-left .menu a:hover {
+header .header-wrapper .header-left .menu a:hover {
   color: #C01A20;
 }
-main header .header-wrapper .header-left .menu a p {
+header .header-wrapper .header-left .menu a p {
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: 150%;
 }
-main header .header-wrapper .header-right .search-wrapper {
+header .header-wrapper .header-right .search-wrapper {
   background-color: #fff;
   width: 283px;
   height: 48px;
   border-radius: 24px;
   padding: 12px 16px;
 }
-main header .header-wrapper .header-right .search-wrapper form .search input {
+header .header-wrapper .header-right .search-wrapper form .search input {
   border: none;
   width: 216px;
   font-size: 16px;
 }
-main header .header-wrapper .header-right .search-wrapper form .search input:focus {
+header .header-wrapper .header-right .search-wrapper form .search input:focus {
   outline: none;
   color: #555;
 }
-main header .header-wrapper .header-right .search-wrapper form .search button {
+header .header-wrapper .header-right .search-wrapper form .search button {
   border: none;
   background-color: #fff;
   margin-right: -4px;
   cursor: pointer;
 }
-main header .header-wrapper .header-right .notify {
+header .header-wrapper .header-right .notify {
   position: relative;
   padding: 6px 8px;
   color: #FFF;
   cursor: pointer;
 }
-main header .header-wrapper .header-right .notify-count {
+header .header-wrapper .header-right .notify-count {
   position: absolute;
   height: 16px;
   width: 16px;
@@ -235,7 +234,7 @@ main header .header-wrapper .header-right .notify-count {
   top: 0;
   right: 5px;
 }
-main header .header-wrapper .header-right .notify-count p {
+header .header-wrapper .header-right .notify-count p {
   color: #FFF;
   font-feature-settings: "clig" off, "liga" off;
   font-size: 12px;
@@ -244,15 +243,15 @@ main header .header-wrapper .header-right .notify-count p {
   line-height: 20px; /* 166.667% */
   letter-spacing: 0.14px;
 }
-main header .header-wrapper .header-right .profile-container {
+header .header-wrapper .header-right .profile-container {
   position: relative;
 }
-main header .header-wrapper .header-right .profile-container .profile {
+header .header-wrapper .header-right .profile-container .profile {
   height: 40px;
   color: #fff;
   cursor: pointer;
 }
-main header .header-wrapper .header-right .profile-container .profile-img {
+header .header-wrapper .header-right .profile-container .profile-img {
   height: 40px;
   width: 40px;
   border-radius: 50%;
@@ -260,7 +259,7 @@ main header .header-wrapper .header-right .profile-container .profile-img {
   object-position: center;
   overflow: hidden;
 }
-main header .header-wrapper .header-right .profile-container .profile-action {
+header .header-wrapper .header-right .profile-container .profile-action {
   position: absolute;
   padding: 20px 16px;
   border-radius: 8px;
@@ -269,7 +268,7 @@ main header .header-wrapper .header-right .profile-container .profile-action {
   left: -82px;
   z-index: 99;
 }
-main header .header-wrapper .header-right .profile-container .profile-action a {
+header .header-wrapper .header-right .profile-container .profile-action a {
   text-decoration: none;
   color: black;
   font-size: 16px;
@@ -277,12 +276,20 @@ main header .header-wrapper .header-right .profile-container .profile-action a {
   font-weight: 400;
   line-height: 24px;
 }
+
+main {
+  position: relative;
+  background-color: black;
+  width: 100vw;
+  overflow: hidden;
+  height: 100vh;
+  margin-top: 76px;
+}
 main .hero-section {
   height: 52vh;
   width: 100vw;
   background-color: transparent;
-  margin-top: 78px;
-  padding: 32px 32px 0px 32px;
+  padding: 0px 32px 0px 32px;
   overflow-y: hidden;
   overflow-x: hidden;
 }
@@ -417,7 +424,7 @@ main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img-
   position: relative;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  height: 42px;
+  height: 39px;
   width: 100%;
   overflow: hidden;
   object-fit: cover;
@@ -428,7 +435,7 @@ main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img-
 }
 main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img-down .shadow {
   top: 50%;
-  left: 50%;
+  left: 49.9%;
   transform: translate(-50%, -50%) scaleY(-1);
   position: absolute;
   height: 100%;
@@ -436,7 +443,6 @@ main .hero-section .hero-slider .hero-img-wrapper .hero-img-container .hero-img-
   box-shadow: -6px 12px 29px 4px black inset;
 }
 main .all-section {
-  height: 32vh;
   width: 100vw;
   padding: 0px 32px;
 }
@@ -461,8 +467,6 @@ main .all-section nav .navigations button {
   padding: 6px 16px;
   border-radius: 8px;
   cursor: pointer;
-}
-main .all-section nav .navigations button p {
   color: #C01A20;
   text-transform: uppercase;
   font-size: 14px;
@@ -519,6 +523,19 @@ main .all-section .slider-container .slider-albums-wrapper .slider-album .album-
   color: #fff;
   font-size: 32px;
 }
+main .all-section .slider-container .slider-albums-wrapper .slider-album .album-img .album-img-wavyHover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+main .all-section .slider-container .slider-albums-wrapper .slider-album .album-img .album-img-wavyHover img {
+  transform: translate(40%, 30%);
+  height: 60%;
+  width: 60%;
+}
 main .all-section .slider-container .slider-albums-wrapper .slider-album .album-des h4 {
   display: -webkit-box;
   width: 170px;
@@ -544,6 +561,103 @@ main .all-section .slider-container .slider-albums-wrapper .slider-album .album-
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
+}
+main .lyrics {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: red;
+  height: 100%;
+  width: 100%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  padding: 12px 32px;
+  background-color: rgba(0, 0, 0, 0.662745098);
+  flex-grow: 1;
+  z-index: 99999;
+}
+footer .album-info .album-img {
+  height: 64px;
+  width: 64px;
+  border-radius: 10px;
+  overflow: hidden;
+  object-fit: contain;
+  object-position: center;
+}
+footer .album-info .album-img img {
+  height: 100%;
+  width: 100%;
+}
+footer .album-info h4 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  color: #FFF;
+  text-overflow: ellipsis;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+}
+footer .album-info h5 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  color: #888;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+}
+footer .player-controls {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+footer .player-controls span {
+  color: #fff;
+  font-size: 36px;
+  height: 48px;
+  width: 48px;
+  cursor: pointer;
+}
+footer .showLyrics {
+  padding: 6px 16px;
+  background-color: #C01A20;
+  border-radius: 8px;
+  color: #FFF;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  border: none;
+  cursor: pointer;
+}
+footer .showLyrics::after {
+  content: "Show Lyrics";
+}
+footer .hideLyrics {
+  padding: 6px 16px;
+  background-color: #fff;
+  border-radius: 8px;
+  color: #C01A20;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  border: none;
+  cursor: pointer;
+}
+footer .hideLyrics::after {
+  content: "Hide Lyrics";
 }
 
 /*# sourceMappingURL=style.css.map */
