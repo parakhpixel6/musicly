@@ -68,3 +68,20 @@ musics.forEach(function (music) {
 });
 
 document.querySelector("#hero-img-container").innerHTML = clutter;
+
+
+// /* Hide the volume control */
+// #audio - player:: -webkit - media - controls - volume - slider {
+//     display: none;
+// }
+
+// /* Hide the volume three dots */
+// #audio - player:: -webkit - media - controls - volume - button {
+//     display: none;
+// }
+
+// /* Hide the time display */
+// #audio - player:: -webkit - media - controls - current - time - display,
+//     #audio - player:: -webkit - media - controls - time - remaining - display {
+//     display: none;
+// }
