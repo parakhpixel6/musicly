@@ -109,10 +109,10 @@
                 <h3>Trending Songs</h3>
                 <div class="navigations d-flex justify-center align-center g-24">
                     <div class="navigation d-flex justify-center align-center g-24">
-                        <span class="material-symbols-outlined back">
+                        <span class="inactive material-symbols-outlined back" onclick="scrollBack()">
                             arrow_back_ios
                         </span>
-                        <span class="active material-symbols-outlined forward">
+                        <span class="material-symbols-outlined forward" onclick="scrollForward()">
                             arrow_forward_ios
                         </span>
                     </div>
@@ -122,7 +122,7 @@
                 </div>
             </nav>
             <div class="slider-container">
-                <div class="slider-albums-wrapper d-flex align-center g-40">
+                <div class="slider-albums-wrapper d-flex align-center g-40" id="sliderWrapper">
                 </div>
             </div>
         </section>

@@ -148,28 +148,35 @@ document.querySelector('#forward').addEventListener('click', () => moveSlider('b
 //Album Slider
 const sliderWrapper = document.getElementById('sliderWrapper');        
 const scrollAmount = 200; 
+
+const forwardButton = document.querySelector('.forward');
+const backButton = document.querySelector('.back');
 // Adjust the scroll amount as needed        
 let scrollPosition = 0;        
-function scrollForward() {            
-    if (scrollPosition < sliderWrapper.scrollWidth - sliderWrapper.clientWidth) {                
-        scrollPosition += scrollAmount;                
-        sliderWrapper.style.transform = `translateX(-${scrollPosition}px)`;                
-        document.querySelector('.back').classList.add('active');            
-    }            
-    if (scrollPosition >= sliderWrapper.scrollWidth - sliderWrapper.clientWidth) {                
-        document.querySelector('.forward').classList.remove('active');            
-    }        
-}        
-function scrollBack() {            
-    if (scrollPosition > 0) {                
-        scrollPosition -= scrollAmount;                
-        sliderWrapper.style.transform = `translateX(-${scrollPosition}px)`;                
-        document.querySelector('.forward').classList.add('active');           
-     }            
-    if (scrollPosition <= 0) {                
-        document.querySelector('.back').classList.remove('active');            
-    }        
+function scrollForward() {
+    if (scrollPosition < sliderWrapper.scrollWidth - sliderWrapper.clientWidth) {
+        scrollPosition += scrollAmount;
+        console.log(scrollPosition);
+        sliderWrapper.style.transform = `translateX(-${scrollPosition}px)`;
+    }
+    forwardButton.classList.add('inactive');
+    backButton.classList.remove('inactive');
 }
+
+function scrollBack() {
+    if (scrollPosition > 0) {
+        scrollPosition -= scrollAmount;
+        sliderWrapper.style.transform = `translateX(-${scrollPosition}px)`;
+    }
+    backButton.classList.add('inactive');
+    forwardButton.classList.remove('inactive');
+}
+
+
+
+
+
+
 
 
 
