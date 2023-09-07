@@ -447,12 +447,13 @@ main .all-section nav h3 {
   font-weight: 500;
   line-height: 150%;
 }
-main .all-section nav .navigations .navigation span {
+main .all-section nav .navigations .navigation .inactive {
   color: #888;
   cursor: pointer;
 }
-main .all-section nav .navigations .navigation span.active {
+main .all-section nav .navigations .navigation span {
   color: #fff;
+  cursor: pointer;
 }
 main .all-section nav .navigations button {
   background-color: #fff;
@@ -507,8 +508,11 @@ main .all-section .slider-container .slider-albums-wrapper .slider-album .album-
   position: absolute;
   top: 0;
   left: 0;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0px 7px 50px 0px black inset;
 }
 main .all-section .slider-container .slider-albums-wrapper .slider-album .album-img:hover .album-img-hover span {
+  transition: 0.3s ease-in-out;
   padding: 8px;
   border-radius: 50%;
   background-color: rgba(85, 85, 85, 0.5882352941);
