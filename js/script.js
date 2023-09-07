@@ -24,6 +24,9 @@ let musics = [
     },
 ]
 
+
+
+
 let clutter = "";
 
 musics.forEach(function(music){
@@ -44,7 +47,102 @@ musics.forEach(function(music){
     `
 })
 
+
 document.querySelector("#hero-img-container").innerHTML=clutter;
+
+
+
+let slideIndex = 0;
+let displaySlide = musics; 
+
+function slideDirection(direction) {
+
+if(direction === back) {
+    displaySlide.push(displaySlide.shift())
+}
+
+if(direction === forward) {
+    displaySlide.unshift(displaySlide.pop());
+}
+
+showSlider(musics);
+}
+
+
+function showSlider(music) {
+    music = music.length == 0 ? musics : music;
+    let clutter = `
+        <div id="music-${music[0].id}" class="hero-img transformed-0 flex-d-col d-flex justify-flex-end g-16">
+            <div class="hero-img-up">
+                <img src="${music[0].album_img}" alt="">
+
+                <div class='hero-img-hover flex-d-col d-flex align-center justify-space-between'>
+                    <div class='play-container d-flex align-center justify-center'>
+                        <span class='material-symbols-outlined'>play_arrow</span>
+                    </div>
+                    <div class='song-info flex-d-col d-flex g-4'>
+                        <h4>${music[0].song_name}</h4>
+                        <h5>${music[0].artist}</h5>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="hero-img-down">
+                <img src="${music[0].album_img}" alt="">
+                <div class="shadow">
+                </div>
+            </div>
+        </div>
+
+
+        <div id="music-${music[1].id}" class="hero-img transformed-1 flex-d-col d-flex justify-flex-end g-16">
+            <div class="hero-img-up">
+                <img src="${music[1].album_img}" alt="">
+
+                <div class='hero-img-hover flex-d-col d-flex align-center justify-space-between'>
+                    <div class='play-container d-flex align-center justify-center'>
+                        <span class='material-symbols-outlined'>play_arrow</span>
+                    </div>
+                    <div class='song-info flex-d-col d-flex g-4'>
+                        <h4>${music[1].song_name}</h4>
+                        <h5>${music[1].artist}</h5>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="hero-img-down">
+                <img src="${music[1].album_img}" alt="">
+                <div class="shadow">
+                </div>
+            </div>
+        </div>
+
+
+        <div id="music-${music[2].id}" class="hero-img transformed-2 flex-d-col d-flex justify-flex-end g-16">
+            <div class="hero-img-up">
+                <img src="${music[2].album_img}" alt="">
+                <div class='hero-img-hover flex-d-col d-flex align-center justify-space-between'>
+                    <div class='play-container d-flex align-center justify-center'>
+                        <span class='material-symbols-outlined'>play_arrow</span>
+                    </div>
+                    <div class='song-info flex-d-col d-flex g-4'>
+                        <h4>${music[2].song_name}</h4>
+                        <h5>${music[2].artist}</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-img-down">
+                <img src="${music[2].album_img}" alt="">
+                <div class="shadow">
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.querySelector("#hero-img-container").innerHTML=clutter;
+}
+
+
 
 let clutter1 = "";
 
@@ -53,11 +151,14 @@ for(let i = 0; i < 5; i++) {
     for(let j = musics.length - 1; j >= 0; j--){
         const music = musics[j];
         clutter1 +=`
-        <div id="music-${music.id}" class="slider-album flex-d-col d-flex align-center justify-space-between g-12">
+        <div  id="music-${music.id}" class="slider-album flex-d-col d-flex align-center justify-space-between g-12">
             <div class="album-img">
                 <img src="${music.album_img}" alt="">
-                <div class='album-img-hover d-flex justify-center align-center'>
-                    <span class="material-symbols-outlined">play_arrow</span>
+                <div  class='album-img-hover d-flex justify-center align-center'>
+                    <span class="material-symbols-outlined" >play_arrow</span>
+                </div>
+                <div class='wavy d-none album-img-wavyHover'>
+                    <img src="./assets/music-playing.gif" alt="wavy-gif">
                 </div>
             </div>
             <div class="album-des flex-d-col d-flex align-center justify-space-between">
@@ -71,79 +172,70 @@ for(let i = 0; i < 5; i++) {
 
 document.querySelector(".slider-albums-wrapper").innerHTML = clutter1;
 
+//----------MMMMMUUUSSSIIIICCCCC-----pppllllaaaayyyyeeerrrr----llllooooogggggiiiiccc
+const allSliderAlbums = document.querySelectorAll('.slider-album');
+
+allSliderAlbums.forEach( (album) => {
+    album.addEventListener('click', function() {
+        allSliderAlbums.forEach((otherAlbum) => {
+            if(otherAlbum !== album){
+                otherAlbum.querySelector('.album-img-hover').classList.remove('d-none');
+                otherAlbum.querySelector('.wavy').classList.add('d-none');
+            }
+        })
+        album.querySelector('.album-img-hover').classList.add('d-none');
+        album.querySelector('.wavy').classList.remove('d-none');
+    })
+})
 
 
-//HERO SECTION JS LOGIC
-let currentIndex = 0;
-let forwardClickCount = 0;
-let backwardClickCount = 0;
 
 
-let musicElements = [
-    document.querySelector("#music-0"),
-    document.querySelector("#music-1"),
-    document.querySelector("#music-2")
-]
-let flag = 0
 
-function moveSlider(direction) {  
+//Lyrics Window
+
+const showLyrics = document.querySelector('.showLyrics') 
+
+showLyrics.addEventListener('click', function() {
     
-    if (direction === 'forward') {    
-        currentIndex = (currentIndex + 1) % musics.length;
-        if(forwardClickCount < 2){
-            forwardClickCount++;
-            
-        } else {
-            forwardClickCount = 0
-        }
-    } else if (direction === 'backward') {    
-        currentIndex = (currentIndex - 1 ) % musics.length;  
-
-        if(backwardClickCount < 2){
-            backwardClickCount++;
-        } else {
-            backwardClickCount = 0
-        }
-    }  
-    gsap.to('.hero-img', {    
-        xPercent: -currentIndex * 100,    
-        duration: 1, 
-        ease: 'power2.inOut', 
-    });
-
-    if (backwardClickCount === 1) {
-        // transform: perspective(478px) rotateY(-345deg) scale(0.9);
-        console.log('hii music-0');
-        musicElements[0].classList.remove('transformed-0');
-        musicElements[0].classList.add('transformed-1');
-        musicElements[1].classList.remove('transformed-1');
-        musicElements[1].classList.add('transformed-2');
-        flag = 1;
-    } else if (flag === 1) {
-        // transform: perspective(478px) rotateY(-345deg) scale(0.9);
-        console.log('hii music-1');
-        musicElements[0].classList.remove('transformed-1');
-        musicElements[0].classList.add('transformed-2');
-
-        flag = 2;
+    if (showLyrics.classList.contains('hideLyrics')) {
+        console.log('hide')
+        gsap.to('.lyrics', {
+            y: '100%',
+            duration: 1,
+            ease: "expo.easeInOut"
+        })
+        showLyrics.classList.toggle('hideLyrics');
+        showLyrics.classList.toggle('showLyrics');
+    } else {
+        gsap.to('.lyrics', {
+            y: '-100%',
+            duration: 1,
+            ease: "expo.easeInOut"
+        })
+        showLyrics.classList.toggle('showLyrics');
+        showLyrics.classList.toggle('hideLyrics');
     }
 
-    if (forwardClickCount === 1) {
-        // transform: perspective(478px) rotateY(-345deg) scale(0.9);
-        console.log('hii music-2');
-        musicElements[1].classList.remove('transformed-1');
-        musicElements[1].classList.add('transformed-0');
-        musicElements[2].classList.remove('transformed-2');
-        musicElements[2].classList.add('transformed-1');
-    } 
+});
 
-    console.log(forwardClickCount);
-    console.log(backwardClickCount);
 
-}
 
-document.querySelector('#back').addEventListener('click', () => moveSlider('forward'));
-document.querySelector('#forward').addEventListener('click', () => moveSlider('backward'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Album Slider
 const sliderWrapper = document.getElementById('sliderWrapper');        
@@ -171,6 +263,9 @@ function scrollBack() {
     backButton.classList.add('inactive');
     forwardButton.classList.remove('inactive');
 }
+
+
+
 
 
 

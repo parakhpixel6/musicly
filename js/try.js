@@ -85,3 +85,90 @@ document.querySelector("#hero-img-container").innerHTML = clutter;
 //     #audio - player:: -webkit - media - controls - time - remaining - display {
 //     display: none;
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//HERO SECTION JS LOGIC
+let currentIndex = 0;
+let forwardClickCount = 0;
+let backwardClickCount = 0;
+
+
+let musicElements = [
+    document.querySelector("#music-0"),
+    document.querySelector("#music-1"),
+    document.querySelector("#music-2")
+]
+let flag = 0
+
+function moveSlider(direction) {  
+    
+    if (direction === 'forward') {    
+        currentIndex = (currentIndex + 1) % musics.length;
+        if(forwardClickCount < 2){
+            forwardClickCount++;
+            
+        } else {
+            forwardClickCount = 0
+        }
+    } else if (direction === 'backward') {    
+        currentIndex = (currentIndex - 1 ) % musics.length;  
+
+        if(backwardClickCount < 2){
+            backwardClickCount++;
+        } else {
+            backwardClickCount = 0
+        }
+    }  
+    gsap.to('.hero-img', {    
+        xPercent: -currentIndex * 100,    
+        duration: 1, 
+        ease: 'power2.inOut', 
+    });
+
+    if (backwardClickCount === 1) {
+        // transform: perspective(478px) rotateY(-345deg) scale(0.9);
+        console.log('hii music-0');
+        musicElements[0].classList.remove('transformed-0');
+        musicElements[0].classList.add('transformed-1');
+        musicElements[1].classList.remove('transformed-1');
+        musicElements[1].classList.add('transformed-2');
+        flag = 1;
+    } else if (flag === 1) {
+        // transform: perspective(478px) rotateY(-345deg) scale(0.9);
+        console.log('hii music-1');
+        musicElements[0].classList.remove('transformed-1');
+        musicElements[0].classList.add('transformed-2');
+
+        flag = 2;
+    }
+
+    if (forwardClickCount === 1) {
+        // transform: perspective(478px) rotateY(-345deg) scale(0.9);
+        console.log('hii music-2');
+        musicElements[1].classList.remove('transformed-1');
+        musicElements[1].classList.add('transformed-0');
+        musicElements[2].classList.remove('transformed-2');
+        musicElements[2].classList.add('transformed-1');
+    } 
+
+    console.log(forwardClickCount);
+    console.log(backwardClickCount);
+
+}
+
+document.querySelector('#back').addEventListener('click', () => moveSlider('forward'));
+document.querySelector('#forward').addEventListener('click', () => moveSlider('backward'));

@@ -13,93 +13,95 @@
     <title>Musicly</title>
 </head>
 <body>
-    <main>
-        <header>
-            <div class="header-wrapper d-flex justify-space-between align-center">
-                <div class="header-left d-flex align-center justify-center">
-                    <a href="#">
-                        <h1>musicly</h1>
+    <header>
+        <div class="header-wrapper d-flex justify-space-between align-center">
+            <div class="header-left d-flex align-center justify-center">
+                <a href="#">
+                    <h1>musicly</h1>
+                </a>
+                <div class="menu d-flex justify-center align-center g-24">
+                    <a href="#" class="d-flex justify-center align-center g-8">
+                        <span class="material-symbols-outlined">
+                            home
+                        </span>
+                        <p class="mt-4">home</p>
                     </a>
-                    <div class="menu d-flex justify-center align-center g-24">
-                        <a href="#" class="d-flex justify-center align-center g-8">
-                            <span class="material-symbols-outlined">
-                                home
-                            </span>
-                            <p class="mt-4">home</p>
-                        </a>
-                        <a href="#" class="d-flex justify-center align-center g-8">
-                            <span class="material-symbols-outlined">
-                                headphones
-                            </span>
-                            <p class="mt-4">library</p>
-                        </a>
-                        <a href="#" class="d-flex justify-center align-center g-8">
-                            <span class="material-symbols-outlined">
-                                podcasts
-                            </span>
-                            <p class="mt-4">podcasts</p>
-                        </a>
-                    </div>
+                    <a href="#" class="d-flex justify-center align-center g-8">
+                        <span class="material-symbols-outlined">
+                            headphones
+                        </span>
+                        <p class="mt-4">library</p>
+                    </a>
+                    <a href="#" class="d-flex justify-center align-center g-8">
+                        <span class="material-symbols-outlined">
+                            podcasts
+                        </span>
+                        <p class="mt-4">podcasts</p>
+                    </a>
                 </div>
-                <div class="header-right d-flex align-center justify-center g-32">
-                    <div class="search-wrapper d-flex align-center justify-center">
-                        <form action="/" method="get" name="search" class="w-100 h-100 d-flex align-center justify-center">
-                            <div class="search d-flex justify-space-between align-center w-100">
-                                <input id="searchInput" class="h-100" type="text" placeholder="Search Song, Singer or Album ">
-                                <button type="submit" class="h-100 d-flex align-center justify-center">
-                                    <span class="material-symbols-outlined">
-                                        search
-                                    </span>
-                                </button>
-                            </div>
-                        </form>
+            </div>
+            <div class="header-right d-flex align-center justify-center g-32">
+                <div class="search-wrapper d-flex align-center justify-center">
+                    <form action="/" method="get" name="search" class="w-100 h-100 d-flex align-center justify-center">
+                        <div class="search d-flex justify-space-between align-center w-100">
+                            <input id="searchInput" class="h-100" type="text" placeholder="Search Song, Singer or Album ">
+                            <button type="submit" class="h-100 d-flex align-center justify-center">
+                                <span class="material-symbols-outlined">
+                                    search
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="notify ">
+                    <div class="notify-count d-flex align-center justify-center">
+                        <p>1</p>
                     </div>
-                    <div class="notify ">
-                        <div class="notify-count d-flex align-center justify-center">
-                            <p>1</p>
+                    <span class="material-symbols-outlined">
+                        notifications
+                    </span>
+                </div>
+                <div class="profile-container">
+                    <div class="profile d-flex align-center justify-center g-4">
+                        <div class="profile-img">
+                            <img src="./assets/profile.png" alt="user-img">
                         </div>
                         <span class="material-symbols-outlined">
-                            notifications
+                            expand_more
                         </span>
                     </div>
-                    <div class="profile-container">
-                        <div class="profile d-flex align-center justify-center g-4">
-                            <div class="profile-img">
-                                <img src="./assets/profile.png" alt="user-img">
-                            </div>
-                            <span class="material-symbols-outlined">
-                                expand_more
-                            </span>
-                        </div>
-                        <div class="profile-action opac-0 d-flex flex-d-col justify-center align-flex-start g-24">
-                            <a class="d-flex g-8 justify-center align-center" href="#">
-                                <span class="material-symbols-rounded">account_circle</span>
-                                <p>My Account</p>
-                            </a>
-                            <a class="d-flex g-8 justify-center align-center" href="#">
-                                <span class="material-symbols-rounded">star</span>
-                                <p>Premium</p>
-                            </a>
-                            <a class="d-flex g-8 justify-center align-center" href="#">
-                                <span class="material-symbols-rounded">logout</span>
-                                <p>Logout</p>
-                            </a>
-                        </div>
+                    <div class="profile-action opac-0 d-flex flex-d-col justify-center align-flex-start g-24">
+                        <a class="d-flex g-8 justify-center align-center" href="#">
+                            <span class="material-symbols-rounded">account_circle</span>
+                            <p>My Account</p>
+                        </a>
+                        <a class="d-flex g-8 justify-center align-center" href="#">
+                            <span class="material-symbols-rounded">star</span>
+                            <p>Premium</p>
+                        </a>
+                        <a class="d-flex g-8 justify-center align-center" href="#">
+                            <span class="material-symbols-rounded">logout</span>
+                            <p>Logout</p>
+                        </a>
                     </div>
                 </div>
-
             </div>
-        </header>
-        <section class="section-container hero-section">
+
+        </div>
+    </header>
+    <main>
+
+        
+        <section class="section-container hero-section d-flex justify-center align-flex-end">
             <div class="hero-slider w-100  d-flex justify-space-between align-center">
-                <span id="back" class="material-symbols-outlined back">
+                <span onclick='slideDirection(back)' id="back" class="material-symbols-outlined back">
                     arrow_back_ios
                 </span>
                 <div id="hero-img-wrapper" class="hero-img-wrapper d-flex justify-flex-start align-center g-32">
                     <div id="hero-img-container" class="hero-img-container d-flex justify-center align-center g-32">
                     </div>
                 </div>
-                <span id="forward" class="material-symbols-outlined forward">
+                <span onclick='slideDirection(forward)' id="forward" class="material-symbols-outlined forward">
                     arrow_forward_ios
                 </span>
             </div>
@@ -109,7 +111,7 @@
                 <h3>Trending Songs</h3>
                 <div class="navigations d-flex justify-center align-center g-24">
                     <div class="navigation d-flex justify-center align-center g-24">
-                        <span class="inactive material-symbols-outlined back" onclick="scrollBack()">
+                        <span class="material-symbols-outlined back" onclick="scrollBack()">
                             arrow_back_ios
                         </span>
                         <span class="material-symbols-outlined forward" onclick="scrollForward()">
@@ -117,7 +119,7 @@
                         </span>
                     </div>
                     <button type="button">
-                        <p>See All</p>
+                        See All
                     </button>
                 </div>
             </nav>
@@ -126,7 +128,36 @@
                 </div>
             </div>
         </section>
+        
+
+        <!--LYRICS WINDOW-->
+        <section class="lyrics">
+            
+        </section>
     </main>
+    <footer class="players d-flex justify-space-between align-center">
+        <div class="album-info d-flex justify-center align-center g-12">
+            <div class="album-img">
+                <img src="./assets/heeriye.jpg" alt="">
+            </div>
+            <div class="album-des">
+                <h4>
+                    Heeriye (feat. Arijit Singh)
+                </h4>
+                <h5>
+                    Jasleen Royal, Arijit Singh
+                </h5>
+            </div>
+        </div>
+        <div class="player-controls d-flex justify-space-between align-center g-24">
+            <span class="material-symbols-outlined d-flex justify-center align-center">skip_previous</span>
+            <span class="material-symbols-outlined d-flex justify-center align-center">play_arrow</span>
+            <span class="material-symbols-outlined d-flex justify-center align-center">skip_next</span>
+        </div>
+        <button id="btn" class="showLyrics d-flex justify-center align-center" type="button" >
+            
+        </button>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
         integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -139,7 +170,3 @@
     <script src="./js/script.js"></script>
 </body>
 </html>
-
-<div class='album-img-hover d-flex justify-center align-center'>
-    <span class="material-symbols-outlined">play_arrow</span>
-</div>
