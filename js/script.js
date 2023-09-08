@@ -194,30 +194,64 @@ allSliderAlbums.forEach( (album) => {
 
 //Lyrics Window
 
-const showLyrics = document.querySelector('.showLyrics') 
+const showLyrics = document.querySelector('.showLyrics') ;
+const hideLyrics = document.querySelectorAll('.hideLyrics') ;
 
 showLyrics.addEventListener('click', function() {
     
     if (showLyrics.classList.contains('hideLyrics')) {
         console.log('hide')
         gsap.to('.lyrics', {
-            y: '100%',
+            y: `100`,
             duration: 1,
-            ease: "expo.easeInOut"
+            ease: "expo.Power1"
         })
         showLyrics.classList.toggle('hideLyrics');
         showLyrics.classList.toggle('showLyrics');
+        document.querySelector('body').classList.toggle('over-hide')
     } else {
         gsap.to('.lyrics', {
             y: '-100%',
             duration: 1,
-            ease: "expo.easeInOut"
+            ease: "expo.Power1"
         })
         showLyrics.classList.toggle('showLyrics');
         showLyrics.classList.toggle('hideLyrics');
+        document.querySelector('body').classList.toggle('over-hide')
     }
 
 });
+
+
+hideLyrics.forEach(hide => {
+    
+    hide.addEventListener('click', function() {
+        
+        if (hide.classList.contains('showLyrics')) {
+            console.log('hide')
+            gsap.to('.lyrics', {
+                y: `-100%`,
+                duration: 1,
+                ease: "expo.easeInOut"
+            })
+            showLyrics.classList.toggle('hideLyrics');
+            showLyrics.classList.toggle('showLyrics');
+            document.querySelector('body').classList.toggle('over-hide');
+        } else {
+            gsap.to('.lyrics', {
+                y: '100%',
+                duration: 2,
+                ease: "expo.easeInOut"
+            })
+            showLyrics.classList.toggle('showLyrics');
+            showLyrics.classList.toggle('hideLyrics');
+            document.querySelector('body').classList.toggle('over-hide');
+        }
+    
+    });
+});
+
+
 
 
 
