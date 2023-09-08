@@ -244,7 +244,8 @@ header .header-wrapper .header-right .notify-count p {
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
-  line-height: 20px; /* 166.667% */
+  line-height: 20px;
+  /* 166.667% */
   letter-spacing: 0.14px;
 }
 header .header-wrapper .header-right .profile-container {
@@ -301,7 +302,8 @@ main .hero-section .hero-slider {
   color: #fff;
   height: 94%;
 }
-main .hero-section .hero-slider .back, main .hero-section .hero-slider .forward {
+main .hero-section .hero-slider .back,
+main .hero-section .hero-slider .forward {
   font-size: 32px;
   cursor: pointer;
 }
@@ -585,7 +587,6 @@ main .lyrics .lyrics-container .lyricsBgImg {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
   width: 100%;
   filter: blur(4px);
 }
@@ -613,6 +614,26 @@ main .lyrics .lyrics-container .lyrics-wrapper .lyrics-writer {
   height: 545px;
   width: 645px;
   margin-top: -64px;
+  overflow: hidden;
+  text-align: right;
+  overflow-y: auto;
+}
+main .lyrics .lyrics-container .lyrics-wrapper .lyrics-writer::-webkit-scrollbar {
+  display: none;
+}
+main .lyrics .lyrics-container .lyrics-wrapper .lyrics-writer-wrapper {
+  height: fit-content;
+  width: fit-content;
+  color: #fff;
+}
+main .lyrics .lyrics-container .lyrics-wrapper .lyrics-writer-wrapper p {
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  /* 39.2px */
+  letter-spacing: 0.56px;
+  text-transform: capitalize;
 }
 
 footer {
@@ -620,9 +641,71 @@ footer {
   bottom: 0;
   width: 100vw;
   padding: 12px 32px;
-  background-color: rgba(0, 0, 0, 0.662745098);
+  background-color: #000000;
   flex-grow: 1;
   z-index: 99999;
+}
+footer .timeline {
+  position: absolute;
+  width: 100vw;
+  cursor: pointer;
+  top: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  margin-left: -32px;
+  height: 4px;
+  background-color: grey;
+  border-radius: 5px;
+  background-size: 0% 100%;
+  background-image: linear-gradient(#fff, #fff);
+  background-repeat: no-repeat;
+}
+footer .timeline::-webkit-slider-thumb {
+  appearance: none;
+  --webkit-appearence: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.1s;
+  background-color: #fff;
+}
+footer .timeline::-moz-range-thumb {
+  appearance: none;
+  --webkit-appearence: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.1s;
+  background-color: #fff;
+}
+footer .timeline::-ms-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.1s;
+  background-color: #fff;
+}
+footer .timeline::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+footer .timeline::-moz-range-track {
+  appearance: none;
+  -webkit-appearence: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
 }
 footer .album-info .album-img {
   height: 64px;
@@ -646,7 +729,8 @@ footer .album-info h4 {
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 27px */
+  line-height: 150%;
+  /* 27px */
 }
 footer .album-info h5 {
   display: -webkit-box;
@@ -658,7 +742,8 @@ footer .album-info h5 {
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 27px */
+  line-height: 150%;
+  /* 27px */
 }
 footer .player-controls {
   position: absolute;
