@@ -170,11 +170,11 @@ header {
 
         & .header-left {
 
-            &  a {
+            & a {
                 text-decoration: none;
                 color: #C01A20;
 
-                &  h1 {
+                & h1 {
                     font-family: Righteous;
                     font-size: 28px;
                     font-style: normal;
@@ -192,7 +192,7 @@ header {
                     gap: 4px !important;
                 }
 
-                & a  {
+                & a {
                     padding: 8px;
                     text-decoration: none;
                     text-transform: capitalize;
@@ -229,6 +229,7 @@ header {
                     border: none;
                     width: 216px;
                     font-size: 16px;
+
                     &:focus {
                         outline: none;
                         color: #555;
@@ -265,7 +266,8 @@ header {
                         font-size: 12px;
                         font-style: normal;
                         font-weight: 500;
-                        line-height: 20px; /* 166.667% */
+                        line-height: 20px;
+                        /* 166.667% */
                         letter-spacing: 0.14px;
                     }
                 }
@@ -273,7 +275,7 @@ header {
 
             & .profile-container {
                 position: relative;
-                
+
                 & .profile {
                     height: 40px;
                     color: #fff;
@@ -322,7 +324,7 @@ main {
     overflow: hidden;
     height: 100vh;
     margin-top: 76px;
-   
+
 
     & .hero-section {
         height: 52vh;
@@ -337,7 +339,8 @@ main {
             height: 94%;
             // background-color: #555;
 
-            & .back, .forward {
+            & .back,
+            .forward {
                 font-size: 32px;
                 cursor: pointer;
             }
@@ -346,29 +349,30 @@ main {
                 margin-right: -12px;
             }
 
-            
+
 
             & .hero-img-wrapper {
                 overflow: hidden;
                 width: 1294px;
 
                 @media (max-width: 1440px) {
-                    
+
                     width: 1069px;
                 }
 
                 @media (max-width: 1242px) {
-                    
+
                     width: 964px;
                 }
 
                 @media (max-width: 1133px) {
-                    
+
                     width: 728px;
                 }
 
                 .hero-img-container {
                     width: 100%;
+
                     // background-color: red;
                     & .hero-img {
                         backface-visibility: visible;
@@ -398,29 +402,29 @@ main {
                         }
 
 
-                        
-    
+
+
                         @media (max-width: 1440px) {
                             height: 380px;
                             width: 335px;
                         }
-    
+
                         @media (max-width: 1242px) {
                             height: 380px;
                             width: 300px;
                         }
-    
+
                         @media (max-width: 1133px) {
                             height: 300px;
                             width: 240px;
                         }
-    
+
                         &-up {
                             position: relative;
                             border-radius: 8px;
                             height: 380px;
                             width: 100%;
-                            background-color:  green;
+                            background-color: green;
                             overflow: hidden;
                             object-fit: contain;
                             object-position: center;
@@ -441,12 +445,12 @@ main {
                             width: 100%;
                             background-color: rgba(0, 0, 0, 0.116);
                             box-shadow: 0px -40px 73px 16px black inset;
-                            
+
                             & .play-container {
                                 transition: 0.3s ease-in-out;
                                 height: 80%;
                                 width: 100%;
-                                
+
                                 & span {
                                     transition: 0.3s ease-in-out;
                                     padding: 8px;
@@ -457,29 +461,29 @@ main {
                                     margin-top: 60px;
                                 }
                             }
-                            
+
                             & .song-info {
                                 transition: 0.3s ease-in-out;
                                 text-align: left;
                                 padding: 12px;
                                 width: 100%;
-                                
+
                                 & h4 {
                                     transition: 0.3s ease-in-out;
                                     font-size: 24px;
                                     font-weight: 300;
                                 }
-                                
+
                                 & h5 {
                                     transition: 0.3s ease-in-out;
                                     font-size: 18px;
                                     color: #b6b4b4;
                                     font-weight: 400;
-                                 }
-                             }
+                                }
+                            }
 
                         }
-                        
+
                         &-down {
                             position: relative;
                             border-top-left-radius: 8px;
@@ -493,7 +497,7 @@ main {
                             & img {
                                 transform: scaleY(-1);
                             }
-                            
+
                             & .shadow {
                                 top: 50%;
                                 left: 49.9%;
@@ -530,10 +534,10 @@ main {
                 & .navigation {
 
                     & .inactive {
-                        color: #888 ;
+                        color: #888;
                         cursor: pointer;
                     }
-                    
+
                     & span {
                         color: #fff;
                         cursor: pointer;
@@ -552,7 +556,7 @@ main {
                     font-style: normal;
                     font-weight: 700;
                     line-height: 150%;
-                    
+
                 }
             }
         }
@@ -601,7 +605,7 @@ main {
                             left: 0;
                             transition: 0.3s ease-in-out;
                             box-shadow: 0px 7px 50px 0px black inset;
-                            
+
                             & span {
                                 transition: 0.3s ease-in-out;
                                 padding: 8px;
@@ -625,7 +629,7 @@ main {
                                 height: 60%;
                                 width: 60%;
                             }
-                        } 
+                        }
                     }
 
                     & .album-des {
@@ -661,12 +665,12 @@ main {
                 }
 
             }
-            
+
         }
 
     }
 
-    
+
 
     & .lyrics {
         position: absolute;
@@ -681,47 +685,73 @@ main {
             position: relative;
             height: 100%;
             width: 100%;
-           object-fit: contain;
-           object-position: right;
+            object-fit: contain;
+            object-position: right;
 
-           & .lyricsBgImg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            filter: blur(4px);
-           }
+            & .lyricsBgImg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                // height: 100%;
+                width: 100%;
+                filter: blur(4px);
+            }
 
-           & span {
-            rotate: 90deg;
-            color: #fff;
-            font-size: 36px;
-            cursor: pointer;
-           }
+            & span {
+                rotate: 90deg;
+                color: #fff;
+                font-size: 36px;
+                cursor: pointer;
+            }
 
-           & .lyrics-wrapper {
+            & .lyrics-wrapper {
                 padding: 32px 0px;
                 height: 75%;
                 position: relative;
 
                 & .lyrics-img {
-                        height: 340px;
-                        width: 340px;
-                        overflow: hidden;
+                    height: 340px;
+                    width: 340px;
+                    overflow: hidden;
 
-                        & img{
-                                height: 100%;
-                                width: 100%;
-                        }
+                    & img {
+                        height: 100%;
+                        width: 100%;
+                    }
                 }
 
                 & .lyrics-writer {
-                        height: 545px;
-                        width: 645px;
-                        margin-top: -64px;
+                    height: 545px;
+                    width: 645px;
+                    margin-top: -64px;
+                    overflow: hidden;
+                    text-align: right;
+                    overflow-y: auto;
+
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+
+                    &-wrapper {
+                        height: fit-content;
+                        width: fit-content;
+                        color: #fff;
+
+                        & p {
+                            font-size: 28px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: 140%;
+                            /* 39.2px */
+                            letter-spacing: 0.56px;
+                            text-transform: capitalize;
+                            // mix-blend-mode: soft-light;
+
+                        }
+                    }
+
                 }
-           }
+            }
         }
     }
 }
@@ -731,9 +761,79 @@ footer {
     bottom: 0;
     width: 100vw;
     padding: 12px 32px;
-    background-color: #000000a9;
-    flex-grow:  1;
+    background-color: #000000;
+    flex-grow: 1;
     z-index: 99999;
+
+    .timeline {
+        position: absolute;
+        width: 100vw;
+        cursor: pointer;
+        top: 0;
+        appearance: none;
+        -webkit-appearance: none;
+        margin-left: -32px;
+        height: 4px;
+        background-color: grey;
+        border-radius: 5px;
+        background-size: 0% 100%;
+        background-image: linear-gradient(#fff, #fff);
+        background-repeat: no-repeat;
+    }
+
+    .timeline::-webkit-slider-thumb {
+        appearance: none;
+        --webkit-appearence: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+        opacity: 0;
+        transition: all .1s;
+        background-color: #fff;
+    }
+
+    .timeline::-moz-range-thumb {
+        appearance: none;
+        --webkit-appearence: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+        opacity: 0;
+        transition: all .1s;
+        background-color: #fff;
+    }
+
+    .timeline::-ms-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        cursor: pointer;
+        opacity: 0;
+        transition: all .1s;
+        background-color: #fff;
+    }
+
+
+    .timeline::-webkit-slider-runnable-track {
+        -webkit-appearance: none;
+        appearance: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+    }
+
+    .timeline::-moz-range-track {
+        appearance: none;
+        -webkit-appearence: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+    }
+
 
     & .album-info {
 
@@ -761,7 +861,8 @@ footer {
             font-size: 20px;
             font-style: normal;
             font-weight: 400;
-            line-height: 150%; /* 27px */
+            line-height: 150%;
+            /* 27px */
         }
 
         & h5 {
@@ -774,7 +875,8 @@ footer {
             font-size: 16px;
             font-style: normal;
             font-weight: 400;
-            line-height: 150%; /* 27px */
+            line-height: 150%;
+            /* 27px */
         }
     }
 
@@ -829,4 +931,3 @@ footer {
     }
 
 }
-

@@ -52,22 +52,6 @@ previousButton.addEventListener("click", function () {
 });
 
 
-musics.forEach(function (music) {
-    clutter += `
-        <div id="music-${music.id}" class="music-card" onclick="loadAndPlayMusic(${music.id})">
-            <div class="hero-img-up">
-                <img src="${music.album_img}" alt="">
-            </div>
-            <div class="hero-img-down">
-                <img src="${music.album_img}" alt="">
-                <div class="shadow">
-                </div>
-            </div>
-        </div>
-    `;
-});
-
-document.querySelector("#hero-img-container").innerHTML = clutter;
 
 
 // /* Hide the volume control */
