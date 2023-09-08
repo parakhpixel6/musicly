@@ -16,6 +16,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.over-hide {
+  overflow: hidden;
+}
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -566,9 +570,49 @@ main .lyrics {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: red;
   height: 100%;
   width: 100%;
+}
+main .lyrics .lyrics-container {
+  padding: 32px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: right;
+}
+main .lyrics .lyrics-container .lyricsBgImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  filter: blur(4px);
+}
+main .lyrics .lyrics-container span {
+  rotate: 90deg;
+  color: #fff;
+  font-size: 36px;
+  cursor: pointer;
+}
+main .lyrics .lyrics-container .lyrics-wrapper {
+  padding: 32px 0px;
+  height: 75%;
+  position: relative;
+}
+main .lyrics .lyrics-container .lyrics-wrapper .lyrics-img {
+  height: 340px;
+  width: 340px;
+  overflow: hidden;
+}
+main .lyrics .lyrics-container .lyrics-wrapper .lyrics-img img {
+  height: 100%;
+  width: 100%;
+}
+main .lyrics .lyrics-container .lyrics-wrapper .lyrics-writer {
+  height: 545px;
+  width: 645px;
+  margin-top: -64px;
 }
 
 footer {
