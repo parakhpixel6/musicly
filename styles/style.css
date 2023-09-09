@@ -613,7 +613,6 @@ main .lyrics .lyrics-container .lyrics-wrapper .lyrics-img img {
 main .lyrics .lyrics-container .lyrics-wrapper .lyrics-writer {
   height: 545px;
   width: 645px;
-  margin-top: -64px;
   overflow: hidden;
   text-align: right;
   overflow-y: auto;
