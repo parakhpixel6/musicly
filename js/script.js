@@ -221,21 +221,81 @@ const songplay = (newsong, songselectindex = songselectedindex, samesong = false
 
 
 
+    // Define the lyrics content for each value of musics[songselectindex].id
+    const lyricsContent0 = `
+        <p>Ho Ho Ho Ho…</p>
+                            
+        <p>Udja Kale Kawa Tere</p>
+        <p>Munh Vich Khand Paavan</p>
+        
+        <p>Udja Kale Kawa Tere</p>
+        <p>Munh Vich Khand Paavan</p>
+        <p>Le Ja Tu Sandesha Mera</p>
+        <p>Main Sadke Jaavan</p>
 
+        <p>Baagon Mein Phir Jhule Pad Gaye</p>
+        <p>Pak Gaiyan Mithiyan Ambiyan</p>
+        <p>Yeh Chhoti Si Zindagi Te</p>
+        <p>Raataan Lambiyan Lambiyan</p>
+        
+        <p>O Ghar Aaja Pardesi</p>
+        <p>Ke Teri Meri Ek Jindri</p>
+        <p>O Ghar Aaja Pardesi</p>
+        <p>Ke Teri Meri Ek Jindri</p>
+        
+        <p>Ho Ho Ho Ho…</p>
+        
+        <p>Chham Chham Karta Aaya Mausam</p>
+        <p>Pyar Ke Geeton Ka Ho Ho</p>
+        <p>Chham Chham Karta Aaya Mausam</p>
+        <p>Pyar Ke Geeton Ka</p>
 
+        <p>Raste Pe Ankhiyan Rasta Dekhein</p>
+        <p>Bichhde Meeton Ka</p>
+        <p>Saari Saari Raat Jagayein</p>
+        <p>Mujhko Teri Yaadein</p>
+        
+        <p>Mere Saare Geet Bane</p>
+        <p>Mere Dil Ki Fariyadein</p>
+        <p>O Ghar Aaja Pardesi</p>
+        <p>Ke Teri Meri Ek Jindri</p>
+        
+        <p>O Ghar Aaja Pardesi</p>
+        <p>Ke Teri Meri Ek Jindri</p>
+        
+        <p>Ho Ho Ho Ho…</p>
+        
+        <p>O Mitra O Yaara</p>
+        <p>Yaari Tod Ke Matt Jaana</p>
+        <p>Haan Haan O Mitra O Yaara</p>
+        <p>Yaari Tod Ke Matt Jaana</p>
+        
+        <p>Maine Jag Chhoda Tu Mujhko</p>
+        <p>Chhod Ke Matt Jaana</p>\
 
+        <p>Aisa Ho Nahi Sakta</p>
+        <p>Ho Jaaye Toh Matt Ghabrana</p>
+        <p>Main Dauda Aaunga</p>
+        <p>Tu Bas Ek Awaaz Lagana</p>                          
+        
+        <p>O Ghar Aaja Pardesi</p>
+        <p>Ke Teri Meri Ek Jindri</p>
+        <p>O Ghar Aaja Pardesi</p>
+        <p>Ke Teri Meri Ek Jindri</p>
 
-    lyricsscreen.innerHTML = `
-    <div class="lyrics-container">
-        <img class="lyricsBgImg" src="${musics[songselectindex].album_img}" alt="song-background">
-        <span class="hideLyrics material-symbols-outlined">arrow_forward_ios</span>
-        <div class="lyrics-wrapper d-flex align-center justify-space-between">
-            <div class="lyrics-img">
-                <img clas="lyricsImg" src="${musics[songselectindex].album_img}" alt="album-img">
-            </div>
-            <div class="lyrics-writer d-flex justify-flex-end">
-                <div class="lyrics-writer-wrapper">
-                    <p>Heeriye Heeriye Aa Aa</p>
+        <p>Ghar Aaja Sajna Pardesi</p>
+        <p>Ghar Aaja Sajna Pardesi</p>
+        <p>Ghar Aaja Sajna Pardesi</p>
+        <p>Rabb Da Shukar Manavaan Main></p>
+
+        <p>Ghar Aaja Sajna Pardesi</p>
+        <p>Ghar Aaja Sajna Pardesi</p>
+        <p>Ghar Aaja Sajna Pardesi</p>
+        <p>Rabb Da Shukar Manavaan Main></p>
+`;
+
+    const lyricsContent1 = `
+    <p>Heeriye Heeriye Aa Aa</p>
                     <p>Heeriye Heeriye Aa Aa</p>
 
                     <p>Teri Hoke Maraan</p>
@@ -297,7 +357,120 @@ const songplay = (newsong, songselectindex = songselectedindex, samesong = false
 
                     <p>Heeriye Heeriye Aa Aa</p>
                     <p>Heeriye Heeriye Aa Aa</p>
+`;
 
+    const lyricsContent2 = `
+    <p>Hukum Tiger Ka Hukum</p>
+<p>Hukum Tiger Ka Hukum..</p>
+
+<p>Alappara Kelapparom Dha Paaru Da</p>
+<p>Kalavaram Yeranguna Tha Daaru Da</p>
+<p>Nelavaram Puriyidha Okkaruda</p>
+<p>Thalaivaru Kalathula Super Star’u Da</p>
+
+<p>Varamora Odachida Set Aanavan</p>
+<p>Thalamora Kadakura Hit Aanavan</p>
+<p>Eliyavan Manasula Fit Aanavan</p>
+<p>Mudivula Jeichida Urithaanavan</p>
+
+<p>Nadakkura Nada Puyalam Iche</p>
+<p>Mudi Odhukkura Style’ah Iche</p>
+<p>Kannavilla Ithu Real’ah Iche</p>
+
+<p>Thala Mudhal Adi Vara</p>
+<p>Thalaivaru Alappara</p>
+
+<p>Thani Thala Pola Bail’ah Iche</p>
+<p>Ada Nooru’ku Dail’ah Iche</p>
+<p>Sethukkura Edam Jail’ah Iche</p>
+
+<p>Sera Mudhal Thera Vara</p>
+<p>Thalaivaru Alappara</p>
+
+<p>Onn Alumba Paatthavan</p>
+<p>Ungoppan Whistle’ah Kaettavan</p>
+<p>Onn Mavanum Peranum</p>
+<p>Aatam Poda Veppavan</p>
+
+<p>Ivan Paera Thooka Naalu Paeru</p>
+<p>Pattatha Parika Nooru Paeru</p>
+<p>Kutti Chevutha Etti Paatha</p>
+<p>Usura Kodukka Kodi Paeru</p>
+
+<p>Hukum Tiger Ka Hukum..</p>
+
+<p>Alappara Kelapparom</p>
+<p>Thalaivaru Nerandharam</p>
+
+<p>Nee End Card’u Vaicha</p>
+<p>Ivva Trend’ah Mathi Vaippa</p>
+<p>Nee Kuriya Paruch’u Vaicha</p>
+<p>Ivva Valayil Yeri Nippa</p>
+
+<p>Suthi Adikira Lathi Kitta Sikkina</p>
+<p>Attakathi Ellam Podi Dhaan</p>
+<p>Kandabadi Nee Kambeduthu Suthuna</p>
+<p>Uchanthalayila Idi Dhaan</p>
+
+<p>Narachiruchinu Morgaikdhe</p>
+<p>Dhora Kitta Vanthu Dhoraikadhe</p>
+<p>Sirayila Sikki Tholayadhe</p>
+<p>Orasara Varayila Unakoru Korayila</p>
+
+<p>Thoda Nerungura Mudiyadhe</p>
+<p>Edhu Izhukudhu Theriyadhe</p>
+<p>Kulla Narikkidhu Puriyadhe</p>
+
+<p>Vidhigala Thirupura</p>
+<p>Thalaivaru Alappara</p>
+
+<p>Onn Alumba Paatthavan</p>
+<p>Ungoppan Whistle’ah Kaettavan</p>
+<p>Onn Mavanum Peranum</p>
+<p>Aatam Poda Veppavan</p>
+
+<p>Ivan Paera Thooka Naalu Paeru</p>
+<p>Pattatha Parika Nooru Paeru</p>
+<p>Kutti Chevuttha Etti Paatha</p>
+<p>Usura Kodukka Kodi Paeru</p>
+
+<p>Alappara Kelapparom</p>
+<p>Thalaivaru Nerandharam</p>
+<p>Alappara Kelapparom</p>
+<p>Thalaivaru Nerandharam</p>
+
+<p>Hukum Tiger Ka Hukum..</p>
+
+`;
+
+    // Determine which content to use based on musics[songselectindex].id
+    const selectedLyricsContent =
+        musics[songselectindex].id === 0
+            ? lyricsContent0
+            : musics[songselectindex].id === 1
+                ? lyricsContent1
+                : lyricsContent2;
+
+    // Set the content of lyrics-writer-wrapper
+    const lyricsWriterWrapper = document.querySelector('.lyrics-writer-wrapper');
+
+        
+
+
+
+
+
+    lyricsscreen.innerHTML = `
+    <div class="lyrics-container">
+        <img class="lyricsBgImg" src="${musics[songselectindex].album_img}" alt="song-background">
+       
+        <div class="lyrics-wrapper d-flex align-center justify-space-between">
+            <div class="lyrics-img">
+                <img clas="lyricsImg" src="${musics[songselectindex].album_img}" alt="album-img">
+            </div>
+            <div class="lyrics-writer d-flex justify-flex-end">
+                <div class="lyrics-writer-wrapper">
+                    ${lyricsWriterWrapper.innerHTML = selectedLyricsContent}
                 </div>
             </div>
         </div>
@@ -305,8 +478,6 @@ const songplay = (newsong, songselectindex = songselectedindex, samesong = false
     `
     console.log(lyricsscreen.children)
     console.log(musics[songselectindex].album_img)
-
-
 
 }
 
@@ -387,12 +558,22 @@ function changeTimelinePosition() {
 audio.ontimeupdate = changeTimelinePosition;
 
 
+const lyricsWriter = document.querySelector('.lyrics-writer');
+function scrollLyricsWriter() {
+    const percentagePosition = (100 * audio.currentTime) / audio.duration;
+    const maxScroll = lyricsWriter.scrollHeight - lyricsWriter.clientHeight;
+    const scrollValue = (percentagePosition / 100) * maxScroll;
+    lyricsWriter.scrollTop = scrollValue;
+}
+
+audio.addEventListener('timeupdate', scrollLyricsWriter);
 
 
 //Lyrics Window
 
 const showLyrics = document.querySelector('.showLyrics');
-const hideLyrics = document.querySelectorAll('.hideLyrics');
+const hideLyricsBtn = document.querySelector('.hideLyricsBtn');
+const hideLyrics = document.querySelector('.hideLyrics');
 
 showLyrics.addEventListener('click', function () {
 
@@ -418,51 +599,6 @@ showLyrics.addEventListener('click', function () {
     }
 
 });
-
-
-hideLyrics.forEach(hide => {
-
-    hide.addEventListener('click', function () {
-
-        if (hide.classList.contains('showLyrics')) {
-            console.log('hide')
-            gsap.to('.lyrics', {
-                y: `-100%`,
-                duration: 1,
-                ease: "expo.easeInOut"
-            })
-            showLyrics.classList.toggle('hideLyrics');
-            showLyrics.classList.toggle('showLyrics');
-            document.querySelector('body').classList.toggle('over-hide');
-        } else {
-            gsap.to('.lyrics', {
-                y: '100%',
-                duration: 2,
-                ease: "expo.easeInOut"
-            })
-            showLyrics.classList.toggle('showLyrics');
-            showLyrics.classList.toggle('hideLyrics');
-            document.querySelector('body').classList.toggle('over-hide');
-        }
-
-    });
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
